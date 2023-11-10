@@ -6,12 +6,20 @@ import sys
 # Initialize the content of the output .sql file
 output_sql_content = ""
 
+def set_default_wfilepath(namespace):
+    if namespace.wfilepath is None:
+        namespace.wfilepath = namespace.rfilepath
+
+
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Combine SQL files into a single .sql file")
 parser.add_argument("--model_type", nargs=1, help="Core or config")
-parser.add_argument("--rfilepath", nargs=1, help="File path to read from")
+parser.add_argument("--rfilepath", nargs=1, help="File path to read from", required=True)
 parser.add_argument("--wfilepath", nargs=1, help="File path to write to")
-parser.add_argument("--input_files", nargs='+', help="List of input .sql files")
+parser.add_argument("--input_files", nargs='+', help="List of input .sql files", required=True)
+
+# Attach the custom function to the parser to set the default wfilepath
+parser.set_defaults(func=set_default_wfilepath)
 
 args = parser.parse_args()
 
@@ -55,8 +63,6 @@ for filename in args.input_files:
 
 # Get the current date and time
 current_datetime = datetime.now().strftime("%Y%m%d%H%M%S")
-
-#output_file_path = "C:/Users/GabrielRowan/OneDrive - eflow/Documents/Eflow Docs/Programming - Other/SQL File Automation"
 
 # Define the output file name with the current date and time
 if args.model_type != '':
