@@ -44,14 +44,16 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 
 ![example sql automation](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/612f2493-8844-46c0-81c2-7fe6d313aa61)
 
-* This reads the contents of the `sql1.sql` and `sql2.sql` files within the read file path `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
-* It will create an output `.sql` file containing the condensed SQL to the write file path `C:\Users\GabrielRowan\OneDrive\Programming\SQLOutput`
-* The output file will be called `combined_sql_{current_datetime}_core.sql`
+* Reads the contents of the `sql1.sql` and `sql2.sql` from `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
+* Create an output `.sql` file containing the condensed SQL to the write file path `C:\Users\GabrielRowan\OneDrive\Programming\SQLOutput`
+* The output file will follow the naming format `combined_sql_{current_datetime}_core.sql`
 
 ## Example 2 - Only required arguments specified
 
 ![required_args_only](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/d4dd4c1c-d9c6-4ffa-976b-5512e9672b8e)
 
-
+* Reads the contents of `sql5.sql` and `sql9.sql` from `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
+* Creates an output `.sql` file containing the condensed SQL in `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
+* The output file will follow the naming format `combined_sql_{current_datetime}.sql`
 
 
