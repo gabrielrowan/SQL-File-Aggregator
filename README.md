@@ -38,7 +38,7 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 *   `--input_files`
 *   List of `.sql` files to read from within the specified read file path
   
-## Examples
+# Examples
 
 ## Example 1 - All arguments specified
 
