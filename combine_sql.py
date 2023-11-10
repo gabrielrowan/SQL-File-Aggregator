@@ -13,14 +13,22 @@ parser.add_argument("--rfilepath", nargs=1, help="File path to read from", requi
 parser.add_argument("--wfilepath", nargs=1, help="File path to write to")
 parser.add_argument("--input_files", nargs='+', help="List of input .sql files", required=True)
 
+def set_default_wfilepath(namespace):
+    if namespace.wfilepath is None:
+        namespace.wfilepath = namespace.rfilepath
+
+# Attach the custom function to the parser to set the default wfilepath
+parser.set_defaults(func=set_default_wfilepath)
+
 args = parser.parse_args()
 
 # Validate model type
-model_type_lowerc = args.model_type[0].lower()
+if (args.model_type is not None):
+    model_type_lowerc = args.model_type[0].lower()
 
-if model_type_lowerc != 'core' and model_type_lowerc != 'config':
-    print("Invalid model type - model type argument can only be 'core' or 'config'")
-    sys.exit(1)
+    if model_type_lowerc != 'core' and model_type_lowerc != 'config':
+        print("Invalid model type - model type argument can only be 'core' or 'config'")
+        sys.exit(1)
 
 # Validate read file path
 rfilepath_slash_transformed = args.rfilepath[0].replace("\\", "/")
@@ -30,17 +38,17 @@ if not os.path.exists(rfilepath_slash_transformed):
     sys.exit(1)
 
 # Validate write file path
-
-wfilepath_slash_transformed = args.wfilepath[0].replace("\\", "/")
+if args.wfilepath is not None:
+    wfilepath_slash_transformed = args.wfilepath[0].replace("\\", "/")
+else: 
+    wfilepath_slash_transformed = rfilepath_slash_transformed
 
 if not os.path.exists(wfilepath_slash_transformed):
     print(f"Error - The specified write file path does not exist: {args.wfilepath}")
     sys.exit(1)
 
 
-
 # Specify the file path where the input files should exist
-
 for filename in args.input_files:
     # Check if the file exists in the specified file path
     rfile_full_path = os.path.join(rfilepath_slash_transformed, filename)
@@ -57,7 +65,7 @@ for filename in args.input_files:
 current_datetime = datetime.now().strftime("%Y%m%d%H%M%S")
 
 # Define the output file name with the current date and time
-if args.model_type != '':
+if args.model_type is not None:
     output_filename = f"combined_sql_{current_datetime}_{args.model_type[0]}.sql"
 else:
     output_filename = f"combined_sql_{current_datetime}.sql"
@@ -71,4 +79,5 @@ try:
         output_sql_file.write(output_sql_content)
     print(f"Combined SQL files into {output_filename}")
 except Exception as e:
-    print(f"An error occurred: {str(e)}")
+    print(f"An error occurred: {str(e)}. File has not been created")
+
