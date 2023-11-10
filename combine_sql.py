@@ -6,20 +6,12 @@ import sys
 # Initialize the content of the output .sql file
 output_sql_content = ""
 
-def set_default_wfilepath(namespace):
-    if namespace.wfilepath is None:
-        namespace.wfilepath = namespace.rfilepath
-
-
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Combine SQL files into a single .sql file")
 parser.add_argument("--model_type", nargs=1, help="Core or config")
 parser.add_argument("--rfilepath", nargs=1, help="File path to read from", required=True)
 parser.add_argument("--wfilepath", nargs=1, help="File path to write to")
 parser.add_argument("--input_files", nargs='+', help="List of input .sql files", required=True)
-
-# Attach the custom function to the parser to set the default wfilepath
-parser.set_defaults(func=set_default_wfilepath)
 
 args = parser.parse_args()
 
@@ -73,8 +65,10 @@ else:
 wfile_full_path = os.path.join(wfilepath_slash_transformed, output_filename)
 
 
-# Write the combined content to the output .sql file (always 'output.sql')
-with open(wfile_full_path, "w") as output_sql_file:
-    output_sql_file.write(output_sql_content)
-
-print(f"Combined SQL files into {output_filename}")
+# Write the combined content to the output .sql file 
+try:
+    with open(wfile_full_path, "w") as output_sql_file:
+        output_sql_file.write(output_sql_content)
+    print(f"Combined SQL files into {output_filename}")
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
