@@ -26,11 +26,12 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 *   File path containing the `.sql` files to read
 *   Requires double or single quotes around the file path
 
-### Write File path (required)
+### Write File path (optional)
 
 *   `--wfilepath` 
 *   File path where the output file containing the aggregated SQL will be created
 *   Requires double or single quotes around the file path
+*   If no write file path is provided, the real file path is the location used for the output file
 
 ### Input Files (required) 
 
