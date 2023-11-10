@@ -1,4 +1,4 @@
-# SQL-File-Aggregator
+# SQL File Aggregator
 
 ## What does it do? 
 
