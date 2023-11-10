@@ -1,6 +1,6 @@
 # SQL File Aggregator
 
-## What does it do? 
+## What does it do? :spiral_notepad: :spiral_notepad: :spiral_notepad: -> :spiral_notepad:
 
 SQL File Aggregator is a command line program in Python which collates the SQL contained in multiple `.sql` files into a single `.sql` file.
 
