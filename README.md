@@ -4,6 +4,13 @@
 
 SQL File Aggregator is a command line program in Python which collates the SQL contained in multiple `.sql` files into a single `.sql` file.
 
+## How to use 
+
+1) Clone down project
+2) Open terminal
+3) Navigate to same path as project
+4) To run program, type `py combine_sql.py` followed by your arguments
+
 ## Arguments List
 
 ### Model type (optional)
