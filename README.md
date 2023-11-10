@@ -1,10 +1,10 @@
 # SQL-File-Aggregator
 
-# What does it do? 
+## What does it do? 
 
 SQL File Aggregator is a command line program in Python which collates the SQL contained in multiple `.sql` files into a single `.sql` file.
 
-# Arguments List
+## Arguments List
 
 ### Model type (optional)
 
