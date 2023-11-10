@@ -10,7 +10,7 @@ output_sql_content = ""
 parser = argparse.ArgumentParser(description="Combine SQL files into a single .sql file")
 parser.add_argument("--model_type", nargs=1, help="Core or config")
 parser.add_argument("--rfilepath", nargs=1, help="File path to read from")
-#parser.add_argument("--wfilepath", nargs=1, help="File path to write to")
+parser.add_argument("--wfilepath", nargs=1, help="File path to write to")
 parser.add_argument("--input_files", nargs='+', help="List of input .sql files")
 
 args = parser.parse_args()
@@ -30,24 +30,26 @@ if not os.path.exists(rfilepath_slash_transformed):
     sys.exit(1)
 
 # Validate write file path
-'''
+
 wfilepath_slash_transformed = args.wfilepath[0].replace("\\", "/")
 
 if not os.path.exists(wfilepath_slash_transformed):
     print(f"Error - The specified write file path does not exist: {args.wfilepath}")
     sys.exit(1)
 
-'''
+
 
 # Specify the file path where the input files should exist
 
 for filename in args.input_files:
     # Check if the file exists in the specified file path
-    file_full_path = os.path.join(rfilepath_slash_transformed, filename)
-    if not os.path.exists(file_full_path):
+    rfile_full_path = os.path.join(rfilepath_slash_transformed, filename)
+
+
+    if not os.path.exists(rfile_full_path):
         print(f"Error - Could not find {filename} in {rfilepath_slash_transformed}")
     else:
-        with open(file_full_path, "r") as sql_file:
+        with open(rfile_full_path, "r") as sql_file:
             output_sql_content += '--' + filename + '\n' + sql_file.read()  + '\n\n'
 
 
@@ -62,8 +64,11 @@ if args.model_type != '':
 else:
     output_filename = f"combined_sql_{current_datetime}.sql"
 
+wfile_full_path = os.path.join(wfilepath_slash_transformed, output_filename)
+
+
 # Write the combined content to the output .sql file (always 'output.sql')
-with open(output_filename, "w") as output_sql_file:
+with open(wfile_full_path, "w") as output_sql_file:
     output_sql_file.write(output_sql_content)
 
 print(f"Combined SQL files into {output_filename}")
