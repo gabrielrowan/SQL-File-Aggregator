@@ -48,10 +48,6 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 * It will create an output `.sql` file containing the condensed SQL to the write file path `C:\Users\GabrielRowan\OneDrive\Programming\SQLOutput`
 * The output file will be called `combined_sql_{current_datetime}_core.sql`
 
-### Sample output file 
-
-![sql example output](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/7b0aeefc-6b8d-48bb-90e7-51b965a04f6c)
-
 ## Example 2 - Only required arguments specified
 
 ![required_args_only](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/d4dd4c1c-d9c6-4ffa-976b-5512e9672b8e)
