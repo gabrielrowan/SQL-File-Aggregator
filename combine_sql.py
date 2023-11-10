@@ -6,8 +6,6 @@ import sys
 # Initialize the content of the output .sql file
 output_sql_content = ""
 
-
-
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Combine SQL files into a single .sql file")
 parser.add_argument("--model_type", nargs=1, help="Core or config")
@@ -82,3 +80,4 @@ try:
     print(f"Combined SQL files into {output_filename}")
 except Exception as e:
     print(f"An error occurred: {str(e)}. File has not been created")
+
