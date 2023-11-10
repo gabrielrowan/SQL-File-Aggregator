@@ -11,7 +11,7 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 *   `--model_type`
 *   Values accepted: 'Core' or 'Config'
 *   When provided, the output `.sql` file will end with the word 'Core' or 'Config'
-*   This is to clarify whether the file is to executed on core or config models
+*   This is to clarify whether the file should be executed on core or config models
 
 ### Read File path (required) 
 
