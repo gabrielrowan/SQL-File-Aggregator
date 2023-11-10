@@ -45,7 +45,7 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 ![example sql automation](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/612f2493-8844-46c0-81c2-7fe6d313aa61)
 
 * Reads the contents of the `sql1.sql` and `sql2.sql` from `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
-* Create an output `.sql` file containing the condensed SQL to the write file path `C:\Users\GabrielRowan\OneDrive\Programming\SQLOutput`
+* Create an output `.sql` file containing the condensed SQL in `C:\Users\GabrielRowan\OneDrive\Programming\SQLOutput`
 * The output file will follow the naming format `combined_sql_{current_datetime}_core.sql`
 
 ## Example 2 - Only required arguments specified
