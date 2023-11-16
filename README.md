@@ -56,8 +56,5 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 * Creates an output `.sql` file containing the condensed SQL in `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
 * The output file will follow the naming format `combined_sql_{current_datetime}.sql`
 
-# Origin Story :superhero_woman:
 
-SQL File Aggregator was created to automate a manual step in the deployment process at work, where the SQL contained in multiple files needs to be collated and executed on the database. 
-Now, instead of copying and pasting the relevant SQL from various files to execute in a pgadmin query, the file containing all relevant SQL can be automatically generated based on input paramters.
 
