@@ -47,7 +47,7 @@ You will need Python installed on your machine
 
 ## Example 1 - All arguments specified
 
-![example sql automation](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/612f2493-8844-46c0-81c2-7fe6d313aa61)
+![all params](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/7c5f8af1-f2e7-49b8-a418-69b73d3a675c)
 
 * Reads the contents of the `sql1.sql` and `sql2.sql` from `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
 * Create an output `.sql` file containing the condensed SQL in `C:\Users\GabrielRowan\OneDrive\Programming\SQLOutput`
@@ -55,7 +55,7 @@ You will need Python installed on your machine
 
 ## Example 2 - Only required arguments specified
 
-![required_args_only](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/d4dd4c1c-d9c6-4ffa-976b-5512e9672b8e)
+![optional params](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/467dcbd4-3a28-4ded-a398-b0b82412fcb3)
 
 * Reads the contents of `sql5.sql` and `sql9.sql` from `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
 * Creates an output `.sql` file containing the condensed SQL in `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
