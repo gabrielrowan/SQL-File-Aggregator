@@ -47,12 +47,17 @@ if not os.path.exists(wfilepath_slash_transformed):
     print(f"Error - The specified write file path does not exist: {args.wfilepath}")
     sys.exit(1)
 
+input_files = []
+
+if args.input_files == ['.']:
+    input_files = [file for file in os.listdir(rfilepath_slash_transformed) if file.endswith(".sql")]
+else:
+    input_files = args.input_files
 
 # Specify the file path where the input files should exist
-for filename in args.input_files:
+for filename in input_files:
     # Check if the file exists in the specified file path
     rfile_full_path = os.path.join(rfilepath_slash_transformed, filename)
-
 
     if not os.path.exists(rfile_full_path):
         print(f"Error - Could not find {filename} in {rfilepath_slash_transformed}")
@@ -80,4 +85,3 @@ try:
     print(f"Combined SQL files into {output_filename}")
 except Exception as e:
     print(f"An error occurred: {str(e)}. File has not been created")
-
