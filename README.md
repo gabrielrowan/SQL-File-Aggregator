@@ -61,5 +61,14 @@ You will need Python installed on your machine
 * Creates an output `.sql` file containing the condensed SQL in `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
 * The output file will follow the naming format `combined_sql_{current_datetime}.sql`
 
+## Example 3 - Read all `.sql` files 
+
+![all files](https://github.com/gabrielrowan/SQL-File-Aggregator/assets/86267314/f8199986-a82b-4462-a372-6d8fc5f62a83)
+
+* Reads all `.sql` files from read file path `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
+* Creates an output `.sql` file containing the condensed SQL in `C:\Users\GabrielRowan\OneDrive\Programming\SQLInput`
+* The output file will follow the naming format `combined_sql_{current_datetime}.sql`
+
+
 
 
