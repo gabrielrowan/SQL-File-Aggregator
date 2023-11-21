@@ -6,7 +6,7 @@ SQL File Aggregator is a command line program in Python which collates the SQL c
 
 ## Prerequisites 
 
-You will need ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) installed on your machine
+You will need Python installed on your machine
 
 ## How to use 
 
