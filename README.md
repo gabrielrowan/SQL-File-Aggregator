@@ -35,7 +35,7 @@ You will need Python installed on your machine
 *   `--wfilepath` 
 *   File path where the output file containing the aggregated SQL will be created
 *   Requires double or single quotes around the file path
-*   If no write file path is provided, the real file path is the location used for the output file
+*   If no write file path is provided, the read file path is the location used for the output file
 
 ### Input Files (required) 
 
